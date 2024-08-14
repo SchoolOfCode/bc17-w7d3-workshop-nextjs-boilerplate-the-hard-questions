@@ -1,6 +1,8 @@
 import { Aleo} from "next/font/google";
 import "./globals.css";
 
+import Header from '../src/Component/Header/Header.jsx'
+
 const aleo = Aleo({ subsets: ["latin"] });
 
 export const metadata = {
@@ -11,8 +13,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={aleo.className}>{children}</body>
-      
+      <body className={aleo.className}>
+        <Header title = "Fireplace Palace"></Header>
+        {children}
+      </body>
     </html>
   );
 }
