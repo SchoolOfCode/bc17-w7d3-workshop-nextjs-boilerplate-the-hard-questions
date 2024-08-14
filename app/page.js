@@ -1,6 +1,7 @@
 import Image from "next/image";
 import "./page.css";
 import HeroText from '../src/Component/HeroText/HeroText.jsx'
+import Footer from "@/src/Component/Footer/Footer";
 
 export default function Home() {
   return(
@@ -40,30 +41,6 @@ export default function Home() {
             </section>
         </div>    
         </main>
-      <footer>
-        <section className = "footer-info">
-            <div>
-                <p>Find us on:</p>
-            </div>
-            <ul>
-                <li>
-                    Facebook
-                </li>
-                <li>
-                    Instagram
-                </li>
-                <li>
-                    Tiktok
-                </li>
-            </ul>
-            <div>
-                <p>©️ Fireplace Palace</p>
-            </div>
-            <div>
-                <p>Info@fireplace.co.uk</p>
-            </div>
-        </section>    
-      </footer>
      </div>
   );
 }
