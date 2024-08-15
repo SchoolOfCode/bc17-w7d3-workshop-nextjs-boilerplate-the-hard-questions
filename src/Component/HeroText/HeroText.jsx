@@ -5,7 +5,7 @@ export default function HeroText( props ) {
   <>
       <section className = "heroText">
           <img className = "other-heroes" src = { props.imgSrc }/>
-          <p><h3>{ props.title }</h3></p>
+          <h3>{ props.title }</h3>
           <p className = "heroContent">{ props.content }</p>
       </section>
   </>

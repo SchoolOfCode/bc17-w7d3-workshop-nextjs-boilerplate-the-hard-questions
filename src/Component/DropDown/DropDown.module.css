@@ -1,6 +1,7 @@
 .menuBox {
+  position: absolute;
+  z-index: 9;
   background: #f0911b;
-  width: 100%;
   height: auto;
 }
 

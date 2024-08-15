@@ -15,17 +15,17 @@ export default function Header(props) {
   }
   return (
     <header className={styles.header}>
+    <li className={styles.menuContainer}>
+      <button className={styles.menuButton} onClick={toggleDropdown}>
+        <Image
+          src = {isDropdownVisible ? '/assests Founders/menu-close-button.png' : '/assests Founders/menu-open-button.png'}
+          width={30}
+          height={30}
+        />
+      </button>
+      {isDropdownVisible && <DropDownMenu />}
+    </li>
     <h1>🔥{ props.title }</h1>
-      <li className={styles.menuContainer}>
-        <button className={styles.menuButton} onClick={toggleDropdown}>
-          <Image
-            src = '/assests Founders/menu-open-button.png'
-            width={30}
-            height={30}
-          />
-        </button>
-        {isDropdownVisible && <DropDownMenu />}
-      </li>
    </header>
   )
 }
