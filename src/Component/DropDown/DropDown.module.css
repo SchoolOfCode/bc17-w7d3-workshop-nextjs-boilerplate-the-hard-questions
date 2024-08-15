@@ -1,0 +1,16 @@
+.menuBox {
+  background: #f0911b;
+  width: 100%;
+  height: auto;
+}
+
+.menuText {
+  list-style: none;
+  text-align: right;
+  padding: 25px;
+  cursor: pointer;
+}
+
+.menuText:hover {
+  text-decoration: underline;
+}
