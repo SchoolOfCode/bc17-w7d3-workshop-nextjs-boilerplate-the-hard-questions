@@ -8,7 +8,7 @@ export default function DropDownMenu() {
     <div className = {styles.menuBox}>
       <ul>
         <li className = {styles.menuText}> <Link href="/">Home</Link></li>
-        <li className = {styles.menuText}> <Link href="/founders">Founders</Link></li>
+        <li className = {styles.menuText}> <Link href="/founders">Meet the Founders</Link></li>
       </ul>
     </div>
   );
