@@ -49,3 +49,29 @@ hr.solid {
   width: 85%;
 
 }
+
+.reviews {
+  text-align: center;
+}
+
+.reviewerText {
+  text-align: right;
+}
+
+.countryButton {
+  border: none;
+  cursor: pointer;
+  padding: 20px;
+  background: grey;
+  color: white;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.reviewsContainer {
+  background: #ebebeb
+}

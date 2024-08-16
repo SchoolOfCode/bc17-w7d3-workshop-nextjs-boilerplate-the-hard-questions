@@ -15,6 +15,24 @@ export default function Home() {
               <h3>Book consultation: <span className = "white-text">0121 345 6789</span></h3>
             </div>
           </section>
+          <div>
+            <section className = "reviews">
+              <h2 className = "how-it-works-text">Trusted.</h2>
+              <hr></hr>
+              <p>We've got thousands of happy customers all over the UK. Choose your country to see the latest review:</p>
+              <div className = "buttonContainer">
+                <button className = "countryButton">England</button>
+                <button className = "countryButton">Wales</button>
+                <button className = "countryButton">Scotland</button>
+              </div>
+              <div>
+                <div className = "reviewsContainer">
+                  <p>I hated the fireplace. Booooo</p>
+                </div>
+                <p className = "reviewerText">Unhappy person</p>
+              </div>
+            </section>
+          </div>
           <div className ="how-it-works-text">
             <h2>How it works</h2>
           </div>
