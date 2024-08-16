@@ -40,7 +40,7 @@ ul {
 
 .how-it-works-text {
   text-align: center;
-  padding: 40px 10px;
+  padding: 40px 10px 20px;
 }
 
 hr.solid {
@@ -69,9 +69,23 @@ hr.solid {
 .buttonContainer {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 20px;
+  padding: 30px 0px  10px;
 }
 
 .reviewsContainer {
-  background: #ebebeb
+  margin: 20px;
+  background: #ebebeb;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.active {
+  background-color: #f0911b;
+}
+
+.reviewerText {
+  font-size: 12px;
+  margin: 20px;
+  padding: 0;
 }
