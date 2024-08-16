@@ -1,9 +1,18 @@
+'use client'
+
 import Image from "next/image";
 import "./page.css";
 import HeroText from '../src/Component/HeroText/HeroText.jsx'
 import Footer from "@/src/Component/Footer/Footer";
-
+import { useState } from "react";
 export default function Home() {
+
+  const[selectedCountry, setSelectedCountry] = useState(null);
+
+  function inputCountry(country){
+    console.log(country);
+  }
+
   return(
     <div className = "pageWrapper">
       <main>
@@ -21,9 +30,10 @@ export default function Home() {
               <hr></hr>
               <p>We've got thousands of happy customers all over the UK. Choose your country to see the latest review:</p>
               <div className = "buttonContainer">
-                <button className = "countryButton">England</button>
-                <button className = "countryButton">Wales</button>
-                <button className = "countryButton">Scotland</button>
+                
+                <button className = "countryButton" onClick={()=>inputCountry("England")}>England</button>
+                <button className = "countryButton"  onClick={()=>inputCountry("Wales")}>Wales</button>
+                <button className = "countryButton"  onClick={()=>inputCountry("Scotland")}>Scotland</button>
               </div>
               <div>
                 <div className = "reviewsContainer">
