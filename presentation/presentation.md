@@ -1,0 +1,18 @@
+- 30 seconds to introduce your team members
+    - Jocelyne
+    - Shilpa
+    - Stacey
+- ~1 minute to talk through your plans, flow diagram, and project management
+    - Stacey
+- ~3 minutes to demo your final product and walk through specific parts of your code you think are interesting, or you're particularly proud of
+    - Shilpa - demo
+    - Jocelyne - code
+- ~1 minute for your reflections on how you worked as a team, what in your project went well, and what you’d improve/change for next time
+    - what went well:
+        - planning went well even though it was all in figma and pseudocode
+        - motivation
+    - what could have been better:
+        - menu not closing
+    - next time:
+        - menu should close
+        - being able to hide review on clicking the currently selected country again
