@@ -1,8 +1,18 @@
 .heroText {
-  text-align: center;
+  text-align: left;
+  margin: 20px;
+  padding: 30px 0px;
+}
+
+h2 {
+  padding: 10px 0px;
+  font-size: 28px;
 }
 
 .other-heroes {
-  padding-top: 30px;
-  width: 80%;
+  padding-top: 15px;
+  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

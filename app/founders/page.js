@@ -1,5 +1,6 @@
 import React from "react";  
 import FounderCard from "@/src/Component/FounderCard/FounderCard";
+import './page.css'
 
 export default function Founders() {
 

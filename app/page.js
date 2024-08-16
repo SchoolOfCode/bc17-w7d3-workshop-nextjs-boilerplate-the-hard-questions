@@ -17,20 +17,20 @@ export default function Home() {
           </section>
           <div className ="how-it-works-text">
             <h2>How it works</h2>
-            <hr className="solid"/>
           </div>
+          <hr className="solid"/>
           <HeroText
             imgSrc = "/how-it-works-1.png"
             title = "Give us a call ..."
             content = 'Call us and book in a "Design Consultation" on a date and time to suit you.'
           />
-          <hr/>
+          <hr className="solid"/>
           <HeroText
             imgSrc = "/how-it-works-2.png"
             title = "We come to you ..."
             content = 'We come to your home to do an assessment of the space and your style.'
           />
-          <hr/>
+          <hr className="solid"/>
           <HeroText
             imgSrc = "/how-it-works-3.png"
             title = "We recommend..."

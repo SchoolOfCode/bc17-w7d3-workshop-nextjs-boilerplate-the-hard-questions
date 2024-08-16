@@ -2,10 +2,11 @@ body {
   font-family: "Aleo", serif;
   font-optical-sizing: auto;
   font-style: normal;
+  background-color: white;
 }
 
 .hero1 {
-  width: 100%;
+  width: 90%;
 }
 
 .wrapper {
@@ -16,7 +17,7 @@ body {
 .discoverTextContainter {
   background: #f0911b;
   color: black;
-  padding: 5px 30px;
+  padding: 50px 20px;
 }
 
 .white-text {
@@ -39,8 +40,12 @@ ul {
 
 .how-it-works-text {
   text-align: center;
+  padding: 40px 10px;
 }
 
 hr.solid {
-  border-top: 3px solid #bbb;
+  border-top: 2px solid #e9e6e6;
+  margin: auto;
+  width: 85%;
+
 }
