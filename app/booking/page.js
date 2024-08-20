@@ -32,19 +32,19 @@ export default function Booking() {
           <legend>Personalia:</legend>
           <ul>
             <li>
-              <label for="name">Full name:</label>
+              <label htmlFor="name">Full name:</label>
               <input type="text" id="name" name="name" value={booking.name} onChange={handleChange} />
             </li>
             <li>
-              <label for="postCode">Postcode:</label>
+              <label htmlFor="postCode">Postcode:</label>
               <input type="text" id="postCode" name="postCode" value={booking.postCode} onChange={handleChange} />
             </li>
             <li>
-              <label for="address">Address:</label>
+              <label htmlFor="address">Address:</label>
               <input type="text" id="address" name="address" value={booking.address} onChange={handleChange} />
             </li>
             <li>
-              <label for="city">City:</label>
+              <label htmlFor="city">City:</label>
               <input type="text" id="city" name="city" value={booking.city} onChange={handleChange} />
             </li>
           </ul>
@@ -53,11 +53,11 @@ export default function Booking() {
           <legend>Personalia:</legend>
           <ul>
             <li>
-              <label for="phoneNumber">Phone number:</label>
+              <label htmlFor="phoneNumber">Phone number:</label>
               <input type="text" id="phoneNumber" name="phoneNumber" value={booking.phoneNumber} onChange={handleChange} />
             </li>
             <li>
-              <label for="email">Email address:</label>
+              <label htmlFor="email">Email address:</label>
               <input type="text" id="email" name="email" value={booking.email} onChange={handleChange} />
             </li>
           </ul>
