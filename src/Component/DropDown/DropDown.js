@@ -16,6 +16,7 @@ export default function DropDownMenu({propFunction}) {
         </button>
         <li className = {styles.menuText}> <Link href="/">Home</Link></li>
         <li className = {styles.menuText}> <Link href="/founders">Meet the Founders</Link></li>
+        <li className = {styles.menuText}> <Link href="/booking">Book Consultation</Link></li>
       </ul>
     </div>
   );
