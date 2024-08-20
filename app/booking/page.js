@@ -21,18 +21,22 @@ export default function Booking() {
 
   const [inputError, setInputError] = useState(null);
 
+  
+
   const handleSubmit = (event) => {
     event.preventDefault()
 
+    setInputError('');
+
+    let inputErrorstr = ''
+
     for (let key in booking) {
       if (booking[key].length < 1) {
-        setInputError("OH NO");
-        console.log("OH NO");
+        inputErrorstr = inputErrorstr + `${key} is required.`;
       }
-      //console.log(key, yourobject[key]);
     }
+    setInputError(inputErrorstr);
     console.log(booking)
-    console.log(inputError)
   }
 
 
@@ -74,6 +78,7 @@ export default function Booking() {
             </li>
           </ul>
         </fieldset>
+        {inputError && <p style={{ color: 'red' }}>{inputError}</p>}
         <input type="submit" value="Submit" />
       </form>
     </>
