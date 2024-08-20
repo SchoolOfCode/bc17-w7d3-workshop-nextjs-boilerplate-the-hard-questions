@@ -18,9 +18,21 @@ export default function Booking() {
     const { name, value } = event.target
     setBooking((oldBooking) => ({ ...oldBooking, [name]: value }))
   }
+
+  const [inputError, setInputError] = useState(null);
+
   const handleSubmit = (event) => {
     event.preventDefault()
+
+    for (let key in booking) {
+      if (booking[key].length < 1) {
+        setInputError("OH NO");
+        console.log("OH NO");
+      }
+      //console.log(key, yourobject[key]);
+    }
     console.log(booking)
+    console.log(inputError)
   }
 
 
