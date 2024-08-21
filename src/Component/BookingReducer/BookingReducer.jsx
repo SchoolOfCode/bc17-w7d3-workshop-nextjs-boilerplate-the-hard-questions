@@ -90,7 +90,7 @@ export default function BookingReducer() {
     })
     setTimeout(() => {
       dispatch({
-        type: "SUBMITTED",
+        type: "FORM_SUBMITTED",
         payload: {}
   
       });
