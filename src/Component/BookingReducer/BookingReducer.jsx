@@ -78,18 +78,49 @@ export default function BookingReducer() {
           <fieldset className="formContainer">
             <legend className = "groupTitle">Personal Information:</legend>
             <FormField 
-            label="name"
-            type ="text"
-            name = "name"
-            value = {state.booking.name}
-            handleChange= {handleChange}
+              label="Name"
+              type ="text"
+              name = "name"
+              value = {state.booking.name}
+              handleChange= {handleChange}
             />
             <FormField 
-            label="email"
-            type ="text"
-            name = "email"
-            value = {state.booking.email}
-            handleChange= {handleChange}
+              label="Postcode"
+              type ="text"
+              name = "postCode"
+              value = {state.booking.postCode}
+              handleChange= {handleChange}
+            />
+            <FormField 
+              label="Address"
+              type ="text"
+              name = "address"
+              value = {state.booking.address}
+              handleChange= {handleChange}
+            />
+            <FormField 
+              label="City"
+              type ="text"
+              name = "city"
+              value = {state.booking.city}
+              handleChange= {handleChange}
+            />
+          </fieldset>
+          <fieldset className="formContainer">
+            <legend className = "groupTitle">Contact Information:</legend>
+            <FormField 
+              label="Phone number"
+              type ="text"
+              name = "phoneNumber"
+              value = {state.booking.phoneNumber}
+              handleChange= {handleChange}
+            />
+            <FormField 
+              label="Email address"
+              type ="text"
+              name = "email"
+              value = {state.booking.email}
+              handleChange= {handleChange}
             />
           </fieldset>
           {inputError && <p style={{ color: 'red' }}>{inputError}</p>}
