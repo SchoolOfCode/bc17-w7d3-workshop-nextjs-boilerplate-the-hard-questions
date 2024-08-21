@@ -83,18 +83,20 @@ export default function BookingReducer() {
     }
     setInputError(inputErrorstr);
     console.log(state.booking)
-    dispatch({
-      type: "SUBMITTING",
-      payload: {}
-
-    })
-    setTimeout(() => {
+    
+    if (!inputErrorstr) {
       dispatch({
-        type: "FORM_SUBMITTED",
+        type: "SUBMITTING",
         payload: {}
-  
-      });
-    }, 2000);
+
+      })
+      setTimeout(() => {
+        dispatch({
+          type: "FORM_SUBMITTED",
+          payload: {}
+    
+        });
+      }, 2000);}
   }
 
 
