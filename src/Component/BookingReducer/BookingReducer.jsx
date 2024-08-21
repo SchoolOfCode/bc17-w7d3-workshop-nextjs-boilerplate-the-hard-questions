@@ -13,19 +13,26 @@ const initialState = {
     phoneNumber: '',
     email: ""
   },
-  inputError: false
+  inputError: false,
+  formLoading: false
 };
 
 function reducer(state, action){
 
   switch(action.type){
+    case "SUBMITTING":
+      return {
+        ...state,
+        formLoading: true
+      }
     case "CHANGE_FIELD":
       return {
           booking: {
             ...state.booking,
             [action.payload.fieldName]: action.payload.fieldValue
           },
-          inputError: state.inputError
+          inputError: state.inputError,
+          formLoading: state.formLoading
       }
     default:
       return state;
@@ -67,13 +74,17 @@ export default function BookingReducer() {
     }
     setInputError(inputErrorstr);
     console.log(state.booking)
+    dispatch({
+      type: "SUBMITTING",
+      payload: {}
+    })
   }
 
 
   return (
     <>
       <h1 className="designBooking">Design Booking</h1>
-      <section className="formWrapper">
+      {state.formLoading ? "Loading" : <section className="formWrapper">
         <form onSubmit={handleSubmit}>
           <fieldset className="formContainer">
             <legend className = "groupTitle">Personal Information:</legend>
@@ -126,7 +137,7 @@ export default function BookingReducer() {
           {inputError && <p style={{ color: 'red' }}>{inputError}</p>}
           <input type="submit" value="Submit" />
         </form>
-      </section>
+      </section>}
     </>
   )
 }
