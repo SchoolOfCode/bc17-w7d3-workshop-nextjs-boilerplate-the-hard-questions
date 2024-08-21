@@ -1,11 +1,17 @@
 'use client'
 
 import { useState, useReducer } from "react";
+import FormField from "../FormField/FormField";
 
 
 const initialState = {
   booking: {
     name: "",
+    postCode: '',
+    address: '',
+    city: '',
+    phoneNumber: '',
+    email: ""
   },
   inputError: false
 };
@@ -48,18 +54,19 @@ export default function BookingReducer() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
+    
 
     setInputError('');
 
     let inputErrorstr = ''
 
-    for (let key in booking) {
-      if (booking[key].length < 1) {
+    for (let key in state.booking) {
+      if (state.booking[key].length < 1) {
         inputErrorstr = inputErrorstr + `${key} is required.`;
       }
     }
     setInputError(inputErrorstr);
-    console.log(booking)
+    console.log(state.booking)
   }
 
 
@@ -70,14 +77,20 @@ export default function BookingReducer() {
         <form onSubmit={handleSubmit}>
           <fieldset className="formContainer">
             <legend className = "groupTitle">Personal Information:</legend>
-            <ul>
-              <li>
-                <label htmlFor="name">Full name:</label>
-              </li>
-              <li>
-                <input type="text" id="name" name="name" value={state.booking.name} onChange={handleChange} /> 
-              </li>
-            </ul>
+            <FormField 
+            label="name"
+            type ="text"
+            name = "name"
+            value = {state.booking.name}
+            handleChange= {handleChange}
+            />
+            <FormField 
+            label="email"
+            type ="text"
+            name = "email"
+            value = {state.booking.email}
+            handleChange= {handleChange}
+            />
           </fieldset>
           {inputError && <p style={{ color: 'red' }}>{inputError}</p>}
           <input type="submit" value="Submit" />
