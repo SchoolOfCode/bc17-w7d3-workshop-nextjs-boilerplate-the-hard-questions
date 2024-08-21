@@ -1,25 +1,50 @@
 'use client'
 
-import { useState } from "react";
+import { useState, useReducer } from "react";
+
+
+const initialState = {
+  booking: {
+    name: "",
+  },
+  inputError: false
+};
+
+function reducer(state, action){
+
+  switch(action.type){
+    case "CHANGE_FIELD":
+      return {
+          booking: {
+            ...state.booking,
+            [action.payload.fieldName]: action.payload.fieldValue
+          },
+          inputError: state.inputError
+      }
+    default:
+      return state;
+  }
+
+}
 
 export default function BookingReducer() {
 
-  const [booking, setBooking] = useState({
-    name: '',
-    postCode: '',
-    address: '',
-    city: '',
-    phoneNumber: '',
-    email: ''
-  })
+  const [state, dispatch] = useReducer(reducer, initialState)
+    
+
   const handleChange = (event) => {
     const { name, value } = event.target
-    setBooking((oldBooking) => ({ ...oldBooking, [name]: value }))
+    dispatch({
+      type: "CHANGE_FIELD",
+      payload: {
+        fieldName: name,
+        fieldValue: value
+      }
+    })
+
   }
 
   const [inputError, setInputError] = useState(null);
-
-  
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -50,42 +75,7 @@ export default function BookingReducer() {
                 <label htmlFor="name">Full name:</label>
               </li>
               <li>
-                <input type="text" id="name" name="name" value={booking.name} onChange={handleChange} />
-              </li>
-              <li>
-                <label htmlFor="postCode">Postcode:</label>
-              </li>
-              <li>
-                <input type="text" id="postCode" name="postCode" value={booking.postCode} onChange={handleChange} />
-              </li>
-              <li>
-                <label htmlFor="address">Address:</label>
-              </li>
-              <li>
-                <input type="text" id="address" name="address" value={booking.address} onChange={handleChange} />
-              </li>
-              <li>
-                <label htmlFor="city">City:</label>
-              </li>
-              <li>
-                <input type="text" id="city" name="city" value={booking.city} onChange={handleChange} />
-              </li>
-            </ul>
-          </fieldset>
-          <fieldset className="formContainer">
-            <legend className = "groupTitle">Contact Information:</legend>
-            <ul>
-              <li>
-                <label htmlFor="phoneNumber">Phone number:</label>
-              </li>
-              <li>
-                <input type="text" id="phoneNumber" name="phoneNumber" value={booking.phoneNumber} onChange={handleChange} />
-              </li>
-              <li>
-                <label htmlFor="email">Email address:</label>
-              </li>
-              <li>
-                <input type="text" id="email" name="email" value={booking.email} onChange={handleChange} />
+                <input type="text" id="name" name="name" value={state.booking.name} onChange={handleChange} /> 
               </li>
             </ul>
           </fieldset>
