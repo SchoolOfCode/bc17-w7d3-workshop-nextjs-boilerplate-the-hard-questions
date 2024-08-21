@@ -19,8 +19,6 @@ export default function BookingForm() {
 
   const [inputError, setInputError] = useState(null);
 
-  
-
   const handleSubmit = (event) => {
     event.preventDefault()
 

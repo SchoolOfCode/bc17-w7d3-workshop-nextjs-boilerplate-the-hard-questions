@@ -14,7 +14,8 @@ const initialState = {
     email: ""
   },
   inputError: false,
-  formLoading: false
+  formLoading: false,
+  formSubmitted: false
 };
 
 function reducer(state, action){
@@ -24,6 +25,12 @@ function reducer(state, action){
       return {
         ...state,
         formLoading: true
+      }
+    case "FORM_SUBMITTED":
+      return {
+        ...state,
+        formSubmitted: true,
+        formLoading: false
       }
     case "CHANGE_FIELD":
       return {
@@ -57,10 +64,12 @@ export default function BookingReducer() {
 
   }
 
+
   const [inputError, setInputError] = useState(null);
 
   const handleSubmit = (event) => {
     event.preventDefault()
+  
     
 
     setInputError('');
@@ -77,14 +86,22 @@ export default function BookingReducer() {
     dispatch({
       type: "SUBMITTING",
       payload: {}
+
     })
+    setTimeout(() => {
+      dispatch({
+        type: "SUBMITTED",
+        payload: {}
+  
+      });
+    }, 2000);
   }
 
 
   return (
     <>
       <h1 className="designBooking">Design Booking</h1>
-      {state.formLoading ? "Loading" : <section className="formWrapper">
+      {state.formSubmitted ? "Submitted" : state.formLoading ? "Loading" : <section className="formWrapper">
         <form onSubmit={handleSubmit}>
           <fieldset className="formContainer">
             <legend className = "groupTitle">Personal Information:</legend>
