@@ -15,7 +15,7 @@ const initialState = {
     phoneNumber: '',
     email: ""
   },
-  inputError: false,
+  inputError: [],
   formLoading: false,
   formSubmitted: false
 };
@@ -46,7 +46,7 @@ function reducer(state, action){
     case "SET_ERROR":
       return {
         ...state,
-        inputError: true
+        [action.payload.fieldName]: action.payload.fieldValue
       }
     default:
       return state;
@@ -76,17 +76,21 @@ export default function BookingReducer() {
   
     // setInputError('');
 
-    let inputErrorstr = ''
+    let inputErrorarr = []
 
     for (let key in state.booking) {
       if (state.booking[key].length < 1) {
-        inputErrorstr = inputErrorstr + `${key} is required.`;
+        inputErrorarr.push(key);
       }
     }
     // setInputError(inputErrorstr);
-    if (inputErrorstr) {
+    if (inputErrorarr) {
       dispatch({
-        type: "SET_ERROR"
+        type: "SET_ERROR",
+        payload: {
+          fieldName: "inputError",
+          fieldValue: inputErrorarr
+        }
       })
     }
   
@@ -118,6 +122,7 @@ export default function BookingReducer() {
               name = "name"
               value = {state.booking.name}
               handleChange= {handleChange}
+              hasError = {state.inputError.includes("name")}
             />
             <FormField 
               label="Postcode"
@@ -125,6 +130,7 @@ export default function BookingReducer() {
               name = "postCode"
               value = {state.booking.postCode}
               handleChange= {handleChange}
+              hasError = {state.inputError.includes("postCode")}
             />
             <FormField 
               label="Address"
@@ -132,6 +138,7 @@ export default function BookingReducer() {
               name = "address"
               value = {state.booking.address}
               handleChange= {handleChange}
+              hasError = {state.inputError.includes("address")}
             />
             <FormField 
               label="City"
@@ -139,6 +146,7 @@ export default function BookingReducer() {
               name = "city"
               value = {state.booking.city}
               handleChange= {handleChange}
+              hasError = {state.inputError.includes("city")}
             />
           </fieldset>
           <fieldset className={styles.formContainer}>
@@ -149,6 +157,7 @@ export default function BookingReducer() {
               name = "phoneNumber"
               value = {state.booking.phoneNumber}
               handleChange= {handleChange}
+              hasError = {state.inputError.includes("phoneNumber")}
             />
             <FormField 
               label="Email address"
@@ -156,9 +165,10 @@ export default function BookingReducer() {
               name = "email"
               value = {state.booking.email}
               handleChange= {handleChange}
+              hasError = {state.inputError.includes("email")}
             />
           </fieldset>
-          {state.inputError && <p style={{ color: 'red' }}>All fields need to be filled in</p>}
+          {state.inputError.length > 0 && <p style={{ color: 'red' }}>All fields need to be filled in</p>}
           <input type="submit" value="Submit" />
         </form>
       </section>}
