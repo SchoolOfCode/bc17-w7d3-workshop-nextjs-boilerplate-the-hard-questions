@@ -169,7 +169,9 @@ export default function BookingReducer() {
             />
           </fieldset>
           {state.inputError.length > 0 && <p style={{ color: 'red' }}>All fields need to be filled in</p>}
-          <input type="submit" value="Submit" />
+          <div className={styles.buttonWrapper}>
+            <input className={styles.submitButton} type="submit" value="Request Design Consultation" />
+          </div>
         </form>
       </section>}
     </>

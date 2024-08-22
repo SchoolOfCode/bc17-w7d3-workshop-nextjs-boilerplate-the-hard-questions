@@ -5,7 +5,7 @@ export default function FormField({ label, type, name, value, handleChange, hasE
   return (
     <div className={styles.formField}>
       <label className={styles.labelInput} htmlFor={name}>{label}{hasError ? <span style={{ color: 'red' }}> Field required</span> : ''}</label>
-      <input className={styles.labelInput}
+      <input className={styles.justInputs}
        type={type}
        id={name}
        name={name}
