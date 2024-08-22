@@ -5,22 +5,9 @@ import "./page.css";
 import HeroText from '../src/Component/HeroText/HeroText.jsx'
 import Footer from "@/src/Component/Footer/Footer";
 import { useState, useEffect } from "react";
+import Reviews from "@/src/Component/Reviews/Reviews";
+
 export default function Home() {
-
-  const[selectedCountry, setSelectedCountry] = useState(null);
-  const[ countryData, setCountryData ] = useState(null);
-
-  useEffect(() => {
-    if (selectedCountry) {
-      fetch(`https://seal-app-336e8.ondigitalocean.app/reviews?country=${selectedCountry}`)
-        .then(response => response.json())
-        .then(data => setCountryData(data))
-    }
-  }, [selectedCountry])
-
-  function inputCountry(country){
-    setSelectedCountry(country);
-  }
 
   return(
     <div className = "pageWrapper">
@@ -34,23 +21,7 @@ export default function Home() {
             </div>
           </section>
           <div>
-            <section className = "reviews">
-              <h2 className = "how-it-works-text">Trusted.</h2>
-              <hr className="solid"/>
-              <p>We've got thousands of happy customers all over the UK. Choose your country to see the latest review:</p>
-              <div className = "buttonContainer">
- {/* // if select country is england then its active, active is a class and css can be used on it  */}
-                <button className={`countryButton ${ selectedCountry === "England" ? "active" : " "}`} onClick={()=>inputCountry("England")}>England</button>
-                <button className={`countryButton ${ selectedCountry === "Wales" ? "active" : " "}`} onClick={()=>inputCountry("Wales")}>Wales</button>
-                <button className={`countryButton ${ selectedCountry === "Scotland" ? "active" : " "}`} onClick={()=>inputCountry("Scotland")}>Scotland</button>
-              </div>
-              {countryData && ( <div>
-                <div className = "reviewsContainer">
-                  <p>{countryData.text}</p>
-                </div>
-                <p className = "reviewerText">{countryData.author} - {countryData.location}</p>
-              </div>)}
-            </section>
+            <Reviews />
           </div>
           <div className ="how-it-works-text">
             <h2>How it works</h2>
