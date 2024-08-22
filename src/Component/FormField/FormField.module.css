@@ -1,0 +1,8 @@
+.formField {
+  background-color: lightgrey;
+  padding: 10px;
+}
+
+.labelInput {
+  display: block;
+}

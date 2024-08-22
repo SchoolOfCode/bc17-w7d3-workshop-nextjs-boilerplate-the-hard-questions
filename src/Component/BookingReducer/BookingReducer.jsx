@@ -2,6 +2,8 @@
 
 import { useState, useReducer } from "react";
 import FormField from "../FormField/FormField";
+import styles from './BookingReducer.module.css'
+import { StyleRegistry } from "styled-jsx";
 
 
 const initialState = {
@@ -108,7 +110,7 @@ export default function BookingReducer() {
       <h1 className="designBooking">Design Booking</h1>
       {state.formSubmitted ? "Submitted" : state.formLoading ? "Loading" : <section className="formWrapper">
         <form onSubmit={handleSubmit}>
-          <fieldset className="formContainer">
+          <fieldset className={styles.formContainer}>
             <legend className = "groupTitle">Personal Information:</legend>
             <FormField 
               label="Name"
@@ -139,7 +141,7 @@ export default function BookingReducer() {
               handleChange= {handleChange}
             />
           </fieldset>
-          <fieldset className="formContainer">
+          <fieldset className={styles.formContainer}>
             <legend className = "groupTitle">Contact Information:</legend>
             <FormField 
               label="Phone number"
