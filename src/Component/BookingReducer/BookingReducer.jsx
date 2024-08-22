@@ -41,6 +41,11 @@ function reducer(state, action){
           inputError: state.inputError,
           formLoading: state.formLoading
       }
+    case "SET_ERROR":
+      return {
+        ...state,
+        inputError: true
+      }
     default:
       return state;
   }
@@ -64,15 +69,10 @@ export default function BookingReducer() {
 
   }
 
-
-  const [inputError, setInputError] = useState(null);
-
   const handleSubmit = (event) => {
     event.preventDefault()
   
-    
-
-    setInputError('');
+    // setInputError('');
 
     let inputErrorstr = ''
 
@@ -81,20 +81,23 @@ export default function BookingReducer() {
         inputErrorstr = inputErrorstr + `${key} is required.`;
       }
     }
-    setInputError(inputErrorstr);
-    console.log(state.booking)
-    
-    if (!inputErrorstr) {
+    // setInputError(inputErrorstr);
+    if (inputErrorstr) {
       dispatch({
-        type: "SUBMITTING",
-        payload: {}
+        type: "SET_ERROR"
+      })
+    }
+  
+    
+    else {
+        console.log(state.booking)
+        dispatch({
+        type: "SUBMITTING"
 
       })
       setTimeout(() => {
         dispatch({
-          type: "FORM_SUBMITTED",
-          payload: {}
-    
+          type: "FORM_SUBMITTED"
         });
       }, 2000);}
   }
@@ -153,7 +156,7 @@ export default function BookingReducer() {
               handleChange= {handleChange}
             />
           </fieldset>
-          {inputError && <p style={{ color: 'red' }}>{inputError}</p>}
+          {state.inputError && <p style={{ color: 'red' }}>All fields need to be filled in</p>}
           <input type="submit" value="Submit" />
         </form>
       </section>}
