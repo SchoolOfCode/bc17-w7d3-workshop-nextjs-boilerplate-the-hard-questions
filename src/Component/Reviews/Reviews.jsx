@@ -17,7 +17,13 @@ export default function Reviews () {
   }, [selectedCountry])
 
   function inputCountry(country){
+    if(country === selectedCountry){
+      setSelectedCountry(null);
+      setCountryData(null);
+    } else {
     setSelectedCountry(country);
+  }
+
     
   }
 
@@ -32,7 +38,7 @@ export default function Reviews () {
         <button className={`countryButton ${ selectedCountry === "Wales" ? styles.active : " "}`} onClick={()=>inputCountry("Wales")}>Wales</button>
         <button className={`countryButton ${ selectedCountry === "Scotland" ? styles.active : " "}`} onClick={()=>inputCountry("Scotland")}>Scotland</button>
       </div>
-      {countryData && ( <div>
+      {countryData  && ( <div>
         <div className = {styles.reviewsContainer}>
           <p>{countryData.text}</p>
         </div>
