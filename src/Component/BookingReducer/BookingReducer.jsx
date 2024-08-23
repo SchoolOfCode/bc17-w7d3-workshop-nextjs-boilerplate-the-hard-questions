@@ -84,7 +84,7 @@ export default function BookingReducer() {
       }
     }
     // setInputError(inputErrorstr);
-    if (inputErrorarr) {
+    if (inputErrorarr.length > 0) {
       dispatch({
         type: "SET_ERROR",
         payload: {
