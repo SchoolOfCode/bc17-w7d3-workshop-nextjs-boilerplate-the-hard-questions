@@ -1,8 +1,4 @@
 import {test, expect} from '@playwright/test';
-test('Page loading',async({page})=> {
-  await page.goto('http://localhost:3000/');
-});
-
 test('Menu button',async({page})=> {
   await page.goto('http://localhost:3000/');
   await page.getByTestId('menu-button').click();
@@ -32,6 +28,10 @@ test('Form Success' ,async({page})=> {
   await page.getByText('Request Design Consultation').click();
   await expect(page.getByText('Loading')).toBeVisible();
   await expect(page.getByText('Submitted')).toBeVisible();
+});
+
+test('Founders' ,async({page})=> {
+  await page.goto('http://localhost:3000/founders');
 });
 
 /*
