@@ -2,6 +2,7 @@ import Link from "next/link";
 import styles from './DropDown.module.css'
 import Image from "next/image";
 
+
 export default function DropDownMenu({propFunction}) {
 
   return (
@@ -14,9 +15,9 @@ export default function DropDownMenu({propFunction}) {
             height={30}
           />
         </button>
-        <li className = {styles.menuText}> <Link href="/">Home</Link></li>
-        <li className = {styles.menuText}> <Link href="/founders">Meet the Founders</Link></li>
-        <li className = {styles.menuText}> <Link href="/booking">Book Consultation</Link></li>
+        <li className = {styles.menuText}> <Link onClick={propFunction} href="/">Home</Link></li>
+        <li className = {styles.menuText}> <Link onClick={propFunction} href="/founders">Meet the Founders</Link></li>
+        <li className = {styles.menuText}> <Link onClick={propFunction} href="/booking">Book Consultation</Link></li>
       </ul>
     </div>
   );
