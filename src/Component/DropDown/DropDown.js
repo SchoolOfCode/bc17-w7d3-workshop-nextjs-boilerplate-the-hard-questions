@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function DropDownMenu({propFunction}) {
 
   return (
-    <div className = {styles.menuBox}>
+    <div className = {styles.menuBox} data-testid="menu">
       <ul>
         <button className={styles.menuButton} onClick={propFunction}>
           <Image

@@ -16,7 +16,7 @@ export default function Header(props) {
     <header className={styles.header}>
       <h1>🔥{ props.title }</h1>
       <div className={styles.menuContainer}>
-        <button className={styles.menuButton} onClick={toggleDropdown}>
+        <button data-testid="menu-button" className={styles.menuButton} onClick={toggleDropdown}>
           <Image
             src = '/assests Founders/menu-open-button.png'
             width={30}
